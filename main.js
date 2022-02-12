@@ -14,11 +14,11 @@ addBtn.addEventListener("click", function  (event) {
         tr.innerHTML= `
         <th scope="row">${num}</th>
         <td>${input.value}</td>
-        <td class="status" style="color : red;">Processing</td>
+        <td class="status" style="color: darkred;">Processing</td>
         <td>
-            <button class="done-btn btn btn-primary btn-sm">a</button>
+            <button  style="background-color: green; color: white" class="done-btn btn btn-sm"><i class="fa-solid fa-square-check"></i></button>
 
-            <button class="delete-btn btn btn-danger btn-sm">D</button>
+            <button  style=" color: white" class="delete-btn btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
         </td>
         `;
         tBoody.appendChild(tr)
@@ -29,16 +29,16 @@ addBtn.addEventListener("click", function  (event) {
 
         let deleteBtns = document.querySelectorAll(".delete-btn");
         for (const deleteBtn of deleteBtns) {
-            deleteBtn.addEventListener("click", function (e) {
-                e.target.parentNode.parentNode.style.display = "none";
+            deleteBtn.addEventListener("click", function () {
+                deleteBtn.parentNode.parentNode.style.display = "none";
                 
             })
         }
 
         let doneBtns = document.querySelectorAll(".done-btn");
         for (const doneBtn of doneBtns) {
-            doneBtn.addEventListener("click", function (e) {
-                let trchilds = e.target.parentNode.parentNode.children;
+            doneBtn.addEventListener("click", function () {
+                let trchilds = doneBtn.parentNode.parentNode.children;
                 for (const trchild of trchilds) {
                     if (trchild.className == "status") {
                         trchild.innerText = "Complete";
