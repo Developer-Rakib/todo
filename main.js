@@ -15,7 +15,7 @@ addBtn.addEventListener("click", function  (event) {
         <th scope="row">${num}</th>
         <td>${input.value}</td>
         <td class="status" style="color: darkred;">Processing</td>
-        <td>
+        <td class="d-flex">
             <button  style="background-color: green; color: white" class="done-btn btn btn-sm"><i class="fa-solid fa-square-check"></i></button>
 
             <button  style=" color: white" class="delete-btn btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
@@ -31,6 +31,7 @@ addBtn.addEventListener("click", function  (event) {
         for (const deleteBtn of deleteBtns) {
             deleteBtn.addEventListener("click", function () {
                 deleteBtn.parentNode.parentNode.style.display = "none";
+                // deleteBtn.parentNode.parentNode.parentNode.removeChild(deleteBtn.parentNode.parentNode);
                 
             })
         }
